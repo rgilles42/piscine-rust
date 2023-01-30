@@ -1,0 +1,9 @@
+[package]
+name = "negative_spelling_test"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+negative_spelling = { path = "../../solutions/negative_spelling" }

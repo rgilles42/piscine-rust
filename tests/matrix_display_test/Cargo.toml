@@ -1,0 +1,11 @@
+[package]
+name = "matrix_display_test"
+version = "0.1.0"
+authors = ["Augusto <aug.ornelas@gmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+matrix_display = { path = "../../solutions/matrix_display"}
+lib = { path = "../lib" }

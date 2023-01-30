@@ -1,0 +1,11 @@
+[package]
+name = "boxing_todo_test"
+version = "0.1.0"
+authors = ["lee <lee-dasilva@hotmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+boxing_todo = { path = "../../solutions/boxing_todo"}
+json="0.12.4"

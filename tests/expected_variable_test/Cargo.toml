@@ -1,0 +1,12 @@
+[package]
+name = "expected_variable_test"
+version = "0.1.0"
+authors = ["OGordoo <marcosafonso8@hotmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+edit_distance = { path = "../../solutions/edit_distance", version = "0.1.0" }
+case = "1.0.0"
+expected_variable = { path = "../../solutions/expected_variable", version = "0.1.0"}

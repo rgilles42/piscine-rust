@@ -1,0 +1,10 @@
+[package]
+name = "lunch_queue_test"
+version = "0.1.0"
+authors = ["lee <lee-dasilva@hotmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lunch_queue = { path = "../../solutions/lunch_queue"}

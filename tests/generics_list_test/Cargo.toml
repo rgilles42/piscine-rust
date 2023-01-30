@@ -1,0 +1,10 @@
+[package]
+name = "generics_list_test"
+version = "0.1.0"
+authors = ["davidrobert99 <davidedamata@gmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+generics_list = { path = "../../solutions/generics_list"}

@@ -1,0 +1,10 @@
+[package]
+name = "project_motion_test"
+version = "0.1.0"
+authors = ["lee <lee-dasilva@hotmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+project_motion = { path = "../../solutions/project_motion"}

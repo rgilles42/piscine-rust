@@ -1,0 +1,11 @@
+[package]
+name = "lalgebra_vector_test"
+version = "0.1.0"
+authors = ["Augusto <aug.ornelas@gmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lalgebra_vector = { path = "../../solutions/lalgebra_vector"}
+lib = { path = "../lib" }
