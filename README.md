@@ -26,7 +26,8 @@ This should look like this:
 `------------/tests`  
 `------------/solutions/fibonacci2/<contents of the cargo module>`
 
-You can launch the automated testing of a completed exercise at the root of this repository with the command `./test.sh exercise_name`.
+You can launch the automated testing of a completed exercise at the root of this repository with the command `./test.sh <exercise_name>`.  
+You can also directly run `cargo test --manifest-path tests/<exercise_name>_test/Cargo.toml`.
 
 Feel free to fork this repository, remove `solutions/*` from `.gitignore` and get to work directly in it.  
 Have fun!
