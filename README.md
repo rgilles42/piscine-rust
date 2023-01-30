@@ -1,4 +1,4 @@
-# rust-piscine
+# piscine-rust
 This is originally a dump of the /app folder of the [test-rust docker image from 01-edu](https://github.com/01-edu/rust-tests/pkgs/container/test-rust).
 
 It's the pedagogical and technical backbone of this 01-style piscine, which, unlike 42, is moulinette-only.  
