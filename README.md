@@ -1,21 +1,46 @@
 # rust-piscine
 This is originally a dump of the /app folder of the [test-rust docker image from 01-edu](https://github.com/01-edu/rust-tests/pkgs/container/test-rust).
 
-The original mechanism was the following:
-- The student repo is cloned under `/jail/student` by the 01 runner program
+It's the pedagogical and technical backbone of this 01-style piscine, which, unlike 42, is moulinette-only.  
+Its general idea is simple :
+- Start the first quest from the curriculum below
+- Do the first exercise
+- Test it with the included automated test
+- If good, move on to the next one
+- ...
+- Congratulations, you are now a rust developer.
+
+Though in the real program:
+- each Day... uuh I mean, Quest becomes available the day after the other, 
+- there is a 90sec cooldown between each moulinette test
+- and you're supposed to do the rushes... uhh I mean, raids in groups and be audited manually by staff.
+
+# Instructions
+
+Make sure the Rust toolchain is installed on your computer.  
+It is best to install it the official way, by going [here](https://www.rust-lang.org/learn/get-started), and not through your package manager.
+
+Make sure your whole piscine repo is the `solutions` folder alongside `tests`, at the root of this repository.  
+This should look like this:  
+`piscine-rust/ <- you are here!`  
+`------------/tests`  
+`------------/solutions/fibonacci2/<contents of the cargo module>`
+
+You can launch the automated testing of a completed exercise at the root of this repository with the command `./test.sh exercise_name`.
+
+Feel free to fork this repository, remove `solutions/*` from `.gitignore` and get to work directly in it.  
+Have fun!
+
+# Notes
+
+The original test mechanism was the following:
+- The student repo was cloned under `/jail/student` by the 01 runner program
 - The container is run, `$EXERCISE` and such are filled and `/jail` is set as current directory
 - `/app/entrypoint.sh` (reworked into `test.sh`) is called upon running the container
 - `/app/tests` is copied in `/jail` so that it is alongside the student repo
 - `/jail/student` is renamed into `/jail/solutions` because runner clones the repo as "`student`" yet all rust tests are written to look for a "`solutions`" package :facepalm:  
 	NB: I have yet no idea if the `/app/tests_utility` is necessary since it is never copied in `/jail/student` during testing
 
-# Instructions
-
-Make sure your whole piscine repo is the `solutions` folder alongside `tests`, at the root of this repository.  
-You can launch the automated testing of a completed exercise with the command `./test.sh exercise_name`.
-
-Feel free to fork this repository, remove `solutions/*` from `.gitignore` and get to work directly in it.  
-Have fun!
 
 # Curriculum
 
