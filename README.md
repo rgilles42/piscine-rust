@@ -1,4 +1,4 @@
-# rust-piscine
+# piscine-rust
 This is originally a dump of the /app folder of the [test-rust docker image from 01-edu](https://github.com/01-edu/rust-tests/pkgs/container/test-rust).
 
 It's the pedagogical and technical backbone of this 01-style piscine, which, unlike 42, is moulinette-only.  
@@ -26,7 +26,8 @@ This should look like this:
 `------------/tests`  
 `------------/solutions/fibonacci2/<contents of the cargo module>`
 
-You can launch the automated testing of a completed exercise at the root of this repository with the command `./test.sh exercise_name`.
+You can launch the automated testing of a completed exercise at the root of this repository with the command `./test.sh <exercise_name>`.  
+You can also directly run `cargo test --manifest-path tests/<exercise_name>_test/Cargo.toml`.
 
 Feel free to fork this repository, remove `solutions/*` from `.gitignore` and get to work directly in it.  
 Have fun!
