@@ -12,8 +12,9 @@ Its general idea is simple :
 
 Though in the real program:
 - each Day... uuh I mean, Quest becomes available the day after the other, 
-- there is a 90sec cooldown between each moulinette test
-- and you're supposed to do the rushes... uhh I mean, raids in groups and be audited manually by staff.
+- there is a 3 minutes cooldown between each moulinette test
+- you're supposed to do the 2 rushes... uhh I mean, raids in groups of 3 and be audited manually by staff
+- the practical project `chaikin` is (the only project) to be reviewed by peers.
 
 # Instructions
 
@@ -187,7 +188,7 @@ Exercices:
 - ref_cell | https://github.com/01-edu/public/tree/master/subjects/ref_cell
 - drop_the_thread | https://github.com/01-edu/public/tree/master/subjects/drop_the_thread
 
-### Raid 03-rust
+### Project 01-rust
 
 Exercice:
 - chaikin | https://github.com/01-edu/public/tree/master/subjects/chaikin
