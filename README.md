@@ -64,7 +64,7 @@ Exercises:
 - find_factorial | https://github.com/01-edu/public/tree/master/subjects/find_factorial
 - matrix_transposition | https://github.com/01-edu/public/tree/master/subjects/matrix_transposition
 - division_and_remainder | https://github.com/01-edu/public/tree/master/subjects/division_and_remainder
-- tuples | https://github.com/01-edu/public/tree/master/subjects/tuples
+- tuples_refs | https://github.com/01-edu/public/tree/master/subjects/tuples_refs
 
 ### Quest 02-rust
 
