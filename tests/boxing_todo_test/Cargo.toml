@@ -9,3 +9,4 @@ edition = "2021"
 [dependencies]
 boxing_todo = { path = "../../solutions/boxing_todo"}
 json="0.12.4"
+tempfile = "3.17.1"

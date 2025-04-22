@@ -1,4 +1,3 @@
-// Complete this function to return the factorial of a given number
 use find_factorial::*;
 
 fn main() {
@@ -11,7 +10,7 @@ fn main() {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use find_factorial::*;
 
     #[test]
     fn factorial_of_1() {

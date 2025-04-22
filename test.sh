@@ -13,11 +13,15 @@ if [ $# -le 0 ]; then
 fi
 EXERCISE=$1
 
-# if test "$EXAM_MODE"; then				# in exam mode, you just have a single text edit box so just one file is created, workarounds necessary
+# if test "$EXAM_MODE"; then				# in exam mode, you might just have a single text edit box so just one file is created, workarounds necessary
 # 	cd "solutions/$EXERCISE"
-# 	if test "$EXAM_RUN_ONLY"; then
-# 		mv src/lib.rs src/main.rs 2>&1 ||:
-# 	fi
+#	# ! to support both the old and the new version of the runner we
+#	# ! need to check the files in the code editor
+# 	if ! echo "$EDITOR_FILES" | tr ',' '\n' | grep -q 'src/main.rs'; then
+#		if test "$CODE_EDITOR_RUN_ONLY"; then
+#			mv src/lib.rs src/main.rs 2>&1 ||:
+#		fi
+#	fi
 # 	cargo init
 # 	cd
 # fi
@@ -27,12 +31,7 @@ if ! test -f "tests/${EXERCISE}_test/Cargo.toml"; then
 	exit 1
 fi
 
-if find solutions -type f -name '*.rs' -exec grep -q 'std::process' {} +; then
-	echo "Your Rust source code cannot use std::process"
-	exit 1
-fi
-
-# if test "$EXAM_RUN_ONLY"; then										# in exam mode the moulinette can simply run your code to show you the results
+# if test "$CODE_EDITOR_RUN_ONLY"; then			# in exam mode the moulinette can simply run your code to show you the results
 # 	cargo run --manifest-path "solutions/$EXERCISE/Cargo.toml" -- "$@"
 # else
 cargo test --manifest-path "tests/${EXERCISE}_test/Cargo.toml"

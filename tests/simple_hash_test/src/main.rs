@@ -1,62 +1,59 @@
-fn main() {}
+use simple_hash::*;
+
+const SENTENCE: &str = "this is a very basic sentence with only a few repetitions. once again this is very basic but it should be enough for basic tests";
+
+fn main() {
+    let words = SENTENCE.split_ascii_whitespace().collect::<Vec<_>>();
+    let frequency_count = word_frequency_counter(&words);
+
+    println!("{:?}", frequency_count);
+    println!("{}", nb_distinct_words(&frequency_count));
+}
 
 #[cfg(test)]
 mod tests {
-    use simple_hash::*;
+    use super::*;
     use std::collections::HashMap;
 
-    fn reference_hash(words: Vec<&str>) -> HashMap<&str, usize> {
-        let mut frequency_count: HashMap<&str, usize> = HashMap::new();
+    fn solution<'a>(words: &'a [&str]) -> HashMap<&'a str, usize> {
+        let mut hash = HashMap::with_capacity(words.len() / 2);
 
-        for word in words {
-            *frequency_count.entry(word).or_insert(0) += 1;
-        }
-        frequency_count
+        words
+            .iter()
+            .copied()
+            .for_each(|w| *hash.entry(w).or_default() += 1);
+
+        hash
     }
 
     #[test]
     fn test_basic_example() {
-        let sentence = "this is a very basic sentence with only few \
-                repetitions. once again this is very basic and \
-                but it should be enough for basic tests"
-            .to_string();
-        let words = sentence.split(" ").collect::<Vec<&str>>();
-        assert_eq!(
-            reference_hash(words.clone()),
-            word_frequency_counter(words.clone())
-        );
+        let words = SENTENCE.split_ascii_whitespace().collect::<Vec<_>>();
+
+        assert_eq!(solution(&words), word_frequency_counter(&words));
     }
 
     #[test]
     fn test_frequency_counter() {
-        let sentence = "on the dock there were dockers \
-                        there were dogs and cats \
-                        and it was raining cats and dogs
-                        a dog and a cat were on both sides of the rain"
-            .to_string();
-        let words = sentence.split(" ").collect::<Vec<&str>>();
-        assert_eq!(
-            reference_hash(words.clone()),
-            word_frequency_counter(words.clone())
-        );
+        let words = "on the dock there were dockers \
+                    there were dogs and cats \
+                    and it was raining cats and dogs
+                    a dog and a cat were on both sides of the rain"
+            .split_ascii_whitespace()
+            .collect::<Vec<_>>();
+
+        assert_eq!(solution(&words), word_frequency_counter(&words));
     }
 
     #[test]
     fn test_empty() {
-        let words = Vec::<&str>::new();
-        assert_eq!(
-            reference_hash(words.clone()),
-            word_frequency_counter(words.clone())
-        );
+        assert_eq!(solution(&[]), word_frequency_counter(&[]));
     }
 
     #[test]
     fn test_only_repeated() {
-        let sentence = "one one one one one one one one one".to_string();
-        let words = sentence.split(" ").collect::<Vec<&str>>();
-        assert_eq!(
-            reference_hash(words.clone()),
-            word_frequency_counter(words.clone())
-        );
+        let words = std::iter::repeat_n("one", 9).collect::<Vec<_>>();
+
+        assert_eq!(solution(&words), word_frequency_counter(&words));
     }
 }

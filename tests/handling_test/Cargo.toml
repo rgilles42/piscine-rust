@@ -8,3 +8,4 @@ edition = "2021"
 
 [dependencies]
 handling = { path = "../../solutions/handling"}
+tempfile = "3.16.0"

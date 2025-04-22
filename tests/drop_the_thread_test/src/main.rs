@@ -1,37 +1,6 @@
 use drop_the_thread::*;
-use std::rc::Rc;
 
 fn main() {
-    let worker = Workers::new();
-    let (id, thread) = worker.new_worker(String::from("command"));
-    let (id1, thread1) = worker.new_worker(String::from("command1"));
-
-    thread.skill();
-
-    println!("{:?}", (worker.is_dropped(id), id, &worker.drops));
-    // output: (true, 0, Cell { value: 1 })
-
-    thread1.skill();
-    println!("{:?}", (worker.is_dropped(id1), id1, &worker.drops));
-    // output: (true, 1, Cell { value: 2 })
-
-    let (id2, thread2) = worker.new_worker(String::from("command2"));
-    let thread2 = Rc::new(thread2);
-    let thread2_clone = thread2.clone();
-
-    // thread2_clone.skill();
-    drop(thread2_clone);
-
-    println!(
-        "{:?}",
-        (
-            worker.is_dropped(id2),
-            id2,
-            &worker.drops,
-            Rc::strong_count(&thread2)
-        )
-    );
-    // (false, 2, Cell { value: 2 }, 1)
 }
 
 #[cfg(test)]
